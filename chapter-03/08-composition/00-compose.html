@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>합성</title>
+</head>
+<body>
+  <h1>합성</h1>
+  <p>Open the Console</p>
+  <script>
+    
+
+    const ingredientAdd = (ingredient) => (input) => `${input}, ${ingredient}`;
+    
+    const bacon = ingredientAdd("Bacon");     //bacon 함수  (input) => `${input}, Bacon`
+    const lettuce = ingredientAdd("Lettuce"); //lettuce 함수 (input) => `${input}, Lettuce`
+    const cheese = ingredientAdd("Cheese");   //cheese 함수 (input) => `${input}, Cheese`
+
+    const compose = (...functions) => input => 
+    //functions = [cheese(), lettuce(), bacon()]
+    //accu = "White Bread, Bacon"
+    //accu = "White Bread, Bacon, Lettuce"
+    //accu = "White Bread, Bacon, Lettuce, Cheese"
+      functions.reduceRight((accu, func) => func(accu), input);
+
+    const makeSandwich = bread => 
+      compose(cheese, lettuce, bacon)(bread);
+
+    console.log(makeSandwich("White Bread"));
+
+  </script>
+</body>
+</html>

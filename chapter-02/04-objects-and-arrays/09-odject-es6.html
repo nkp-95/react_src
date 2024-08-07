@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Literal-enhancement</title>
+</head>
+<body>
+  <h1>object - es6</h1> <!--jsxx문법에서는 클래스 쓸때 <h1 className = ""> 로 해줘야함-->
+  <p>Open the console</p>
+  <script>
+    //es6문법
+    class Fruit{
+      constructor(name){
+        this.name = name;   //name이라는 매개변수 받아와서 맴버변수 생성
+        this.type = "apple"; //변수 추가
+      }
+
+      getName(){
+        return this.name;
+      };
+    }
+    let fruit = new Fruit("apple");
+    console.log(fruit.getName());
+
+  </script>
+</body>
+</html>

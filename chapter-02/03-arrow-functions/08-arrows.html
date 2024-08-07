@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow Frunctions</title>
+</head>
+<body>
+  <h1>Arrow Frunctions</h1>
+  <p>Open the Console</p>
+  <script>
+    //function 
+    var tahoe = {
+      resorts: ["Kirkwood", "Squaw", "Alpine", "Havenly", "Northstar"],
+      print: function(delay=1000){
+        setTimeout(function(){    //function = 함수
+          console.log(this.resorts.join(","));   //console.log(this.resorts.join(","))  콜백함수 부분
+        }.bind(this),delay);
+      }
+    }
+    tahoe.print();
+  </script>
+</body>
+</html>

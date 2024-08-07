@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>재귀함수</title>
+</head>
+<body>
+  <h1>재귀함수</h1>
+  <p>Open the Console</p>
+  <script>
+    const dan = {
+      type: "person",
+      data: {
+        gender: "male",
+        info: {
+          id: 22,
+          fullname: {
+            first: "Dan",
+            last: "Deacon",
+          },
+        },
+      },
+    };
+
+    const deepPick = (fields, object = {}) => {
+      //split(".") : 딜리미터(delimeter 구분자)로 나누어서 배열을 생성 함수
+      //    ex.)fields = "data.info.fullname.last"  
+      //          -> fields.split(".") : ['data', 'info', 'fullname']
+      const [first, ...remaining] = fields.split(".");    //remaining : ['data', 'info', 'fullname']
+      console.log(remaining);
+      console.log(object[first], "object");
+      console.log("=================================");
+      return(remaining.length)          //object['data'], object['info'], object['fullname']
+        ? deepPick(remaining.join("."), object[first])
+        : object[first];
+    };
+
+    console.log(deepPick("data.info.fullname.last", dan));
+    console.log("=====================================")
+    console.log(dan.data.info.fullname.last)
+  </script>
+</body>
+</html>

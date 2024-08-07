@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전개연산자</title>
+</head>
+<body>
+  <h1>전개연산자</h1>
+  <p>Open the console</p>
+  <script>
+    const peaks = ["대청봉", "중청봉", "소청봉"];
+    const [last] = peaks.reverse();
+
+    console.log(last);  //소청봉
+
+    console.log(peaks.join(', '));  //소청봉, 중청봉, 대청봉 = 원본 훼손
+  </script>
+</body>
+</html>

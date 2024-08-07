@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destructuring</title>
+</head>
+<body>
+  <h1>Destructuring - 배열</h1>
+  <p>Open the console</p>
+  <script>
+    //디스트럭처링은 object객체를 개별 변수에 할당하는것을 말한다.
+    //JSON의 객체를 쉽게 매핑하여 변수에 할당할수 있고
+    //여러개를 설정할수 있다.
+
+    let arr = [10, 20, 30, 40, 50];
+    let [a, b, c, d, e] = arr;
+    console.log(`디스트럭처링변수값 :  ${a} ${b} ${c} ${d} ${e}`);
+
+    //건너 띌수도 있다.
+    let [a1, ,c1] = [10, 20, 30];
+    console.log(`a1: ${a1}, c1: ${c1}`);
+
+    let arr2 = [10, 20, 30];  //앞에서부터 순서대로 들어가고 남는자리는 undefined undefined로 출력
+    let [a2, b2, c2, d2, e2] = arr2;
+    console.log(`2 디스트럭처링변수값 :  ${a2} ${b2} ${c2} ${d2} ${e2}`);
+
+    //객체 - 구조분해 할당 (Destructuering assignment)
+    const obj = {
+      name: "name",
+      job: "Software Engineer"
+    }
+
+    let{name, job} = obj;
+    console.log(`name: ${name}, job: ${job}`);
+
+    //배열 구조분해 시 기본값 설정 가능
+    let arr3 = [10, 20, 30]
+    let [a3, b3, c3, d3=40, e3=50] = arr3;
+    console.log(`3 디스트럭처링변수값 :  ${a3} ${c3} ${b3} ${d3} ${e3}`);
+
+    //#######################################################
+    // const [, , middle1] = arr;
+    // const [first, secound, middle2, ...rest] = arr;
+    // console.log(middle1);
+    // console.log(middle2);
+    // console.log(rest);
+  </script>
+</body>
+</html>

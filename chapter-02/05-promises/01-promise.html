@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비동기 통신</title>
+</head>
+<body>
+  <h1>기본적인 promise</h1>
+  <p>Open the Console</p>
+  <script>
+    //동기적 처리방식
+    const f1 = (cb) => {
+      setTimeout(function(){//1초후에 function함수 작동
+        console.log("1번 주문 완료");
+        cb(); //콜백 함수 인자로 받아 1초후 실행
+      },1000);  
+    };
+
+    const f2 = (cb) => {
+      setTimeout(function(){//1초후에 function함수 작동
+        console.log("2번 주문 완료");
+        cb(); //콜백 함수 인자로 받아 3초후 실행
+      },3000);  
+    };
+
+    const f3 = (cb) => {
+      setTimeout(function(){//1초후에 function함수 작동
+        console.log("3번 주문 완료");
+        cb(); //콜백 함수 인자로 받아 2초후 실행
+      },2000);  
+    };
+
+    console.log("시작");
+
+    f1(function(){
+      f2(function(){
+        f3(function(){
+          console.log("끝!!!");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

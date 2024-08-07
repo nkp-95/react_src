@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transforming Data</title>
+</head>
+<body>
+  <h1>Transforming Data</h1>
+  <p>Open the Console</p>
+  <script>
+    const schools = [
+      {name: "Yorktown", age: 30},
+      {name: "Stratford", age: 50},
+      {name: "Washingtaon & Lee", age: 20},
+      {name: "Wakefield", age: 5}
+    ];
+
+    const editName = (oldName, name, arr) => 
+          arr.map((item)=>{
+            if(item.name === oldName){
+              return{
+                ...item,
+                name
+              }
+            }else{
+              return item;
+            }
+          });
+
+    let upDateSchools = editName("Stratford", "HB Woodlawn", schools);
+
+    console.log(upDateSchools[1]);
+    console.log(schools[1]);
+  </script>
+</body>
+</html>

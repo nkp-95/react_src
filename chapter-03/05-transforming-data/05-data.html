@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transforming Data</title>
+</head>
+<body>
+  <h1>Transforming Data</h1>
+  <p>Open the Console</p>
+  <script>
+    const schools = ["Yorktown", "Washingtaon & Lee", "Wakefield"];
+    //객체배열로 리턴
+    const highSchool = schools.map((school) => ({name: school}));
+
+    console.log(highSchool);
+    console.log(schools);
+  </script>
+</body>
+</html>

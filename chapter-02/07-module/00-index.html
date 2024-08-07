@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello module</title>
+  <!-- <script type="module" src="a.js"></script>
+  <script type="module" src="b.js"></script> -->
+  <!-- type="module"은 해당 스코프 안쪽으로 한정시킴 -->
+  <script type="module">
+    import a_number from './a.js';//a_number변수는 마음대로  ./ 는 현재경로(접근)
+    import b_number from './b.js';
+    
+    console.log('a_number: ', a_number);
+    console.log('b_number: ', b_number);
+    
+  </script>
+</head>
+<body>
+  <p>Open the console</p>
+</body>
+</html>

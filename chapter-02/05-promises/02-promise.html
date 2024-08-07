@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비동기 통신</title>
+</head>
+<body>
+  <h1>기본적인 promise</h1>
+  <p>Open the Console</p>
+  <script>
+    const f1 = ()=> {
+      return new Promise((res, rej)=> {
+        setTimeout(()=>{
+          res("1번 주문 완료");
+        }, 1000);
+      });
+    };
+
+    const f2 = (message)=> {
+      console.log(message);
+      return new Promise((res, rej)=> {
+        setTimeout(()=>{
+          res("2번 주문 완료");
+        }, 3000);
+      });
+    };
+
+    const f3 = (message)=> {
+      console.log(message);
+      return new Promise((res, rej)=> {
+        setTimeout(()=>{
+          res("3번 주문 완료");
+        }, 2000);
+      });
+    };
+
+    // //동기방식    소요시간6023.078857421875 ms
+    // console.time("시작");
+    // f1()
+    //   .then((res) => f2(res))
+    //   .then((res) => f3(res))
+    //   .then((res) => console.log(res))
+    //   .catch(console.log)
+    //   .finally(()=>{console.timeEnd("시작")});  //timeEnd는 똑같은 값이기만 하면 시간 잴수 있음
+    //동기방식: 순서대로 작업 실행
+
+    // //비동기방식 소요시간 3004.7451171875 ms
+    // //가장 길게 걸리는 작업 끝날때 까지 기다려야 결과 나옴(병행처리)
+    // console.time("x");
+    // Promise.all([f1(), f2(), f3()]).then((res)=>{ //Promise.all 전부 시작 시킴
+    //   console.log(res);
+    //   console.timeEnd("x");
+    // });
+    //비동기 방식 제일 오래걸리는 작업까지 병행
+
+    //병행처리 먼저 끝나면 그대로 끝 s: 1000.777099609375 ms 
+    //먼저 종료되는 작업이 나올때 까지 작업 실행
+    console.time("s");
+    Promise.race([f1(), f2(), f3()]).then((res) => {   //race= 먼저 끝나는 결과 출력
+      console.log(res);
+      console.timeEnd("s");
+    });
+    //비동기 방식: 병행처리 먼저 끝나는 작업 나오면 종료
+
+
+  </script>
+</body>
+</html>

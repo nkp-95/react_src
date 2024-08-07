@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow Frunctions</title>
+</head>
+<body>
+  <h1>Arrow Frunctions</h1>
+  <p>Open the Console</p>
+  <script>
+    //function
+    var lordify = function(firstName, land){
+      if(!firstName){
+        throw new Error("A firstName is requied to lordify");
+      }
+      if(!land){  //undefined,null, '' -> false
+        throw new Error("A land is requied to lordify");
+      }
+      return `${firstName} of ${land}`;
+    }
+
+    // console.log(lordify("kelly","Sonoma"));
+    console.log(lordify("Dave"));
+  </script>
+</body>
+</html>

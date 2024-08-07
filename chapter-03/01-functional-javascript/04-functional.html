@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수형이란 무엇인가?</title>
+</head>
+<body>
+  <h1>함수형 자바스크립트</h1>
+  <p>콘솔을 보세요!</p>
+  <script>
+    const message = [
+      "함수를 배열에 넣을수도 있습니다.",  //[0]
+      (message) => console.log(message),  //[1]
+      "일반 값과 마찬가지.",              //[2]
+      (message) => console.log(message)   //[3]
+    ];
+    message[1](message[0]);
+    message[3](message[2]);
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transforming Data</title>
+</head>
+<body>
+  <h1>Transforming Data</h1>
+  <p>Open the Console</p>
+  <script>
+    const colors = ["red", "red", "green", "blue", "green"];
+
+    const distinctColors = colors.reduce((distinct, color) => 
+    //        distinct 새로운 배열에 존재한다면 distinct 리턴 false면 기존 배열 전개한 후 새로운 값 추가
+    distinct.indexOf(color) !== -1 ? distinct : [...distinct, color], []);
+    //distinct.indexOf(color) !== 1 ? [...distinct, color] : distinct, []);
+    //distinct.indexOf(color) === -1 ? [...distinct, color] : distinct, []);
+    //distinct.indexOf(color) === 1 ? distinct : [...distinct, color], []);
+
+    console.log(distinctColors);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수형 프로그래밍 핵심 개념 - 불변성</title>
+</head>
+<body>
+  <h1>불변성</h1>
+  <p>함수형 프로그래밍 핵심 개념 - 첫번째</p>
+  <script>
+    let list = [
+      {title: "Red Red"},
+      {title: "Law"},
+      {title: "Party Pink"}
+    ];
+
+    console.log("원본 훼손전");
+    console.log(list);//원본 훼손전
+
+    var addColor = function(title, colors){   //색깔 추가되지만 원본도 바뀜
+      colors.push({title: title});            //push가 불변서 함수가 아니다.
+      return colors;
+    }
+
+    console.log("원본 훼손후");
+    console.log(addColor("화려한 녹색", list).length);
+    console.log(list);//원본 훼손후
+    console.log(list.length);
+  </script>
+</body>
+</html>

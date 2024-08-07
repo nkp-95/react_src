@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Default Parameters</title>
+</head>
+<body>
+  <h1>Default Parameters</h1>
+  <p>Open the console</p>
+  <script>
+    var defaultPerson = {
+      name: {
+        fisrt: "Shane",
+        last: "McConkey"
+      },
+      favAcivity: "skiing"
+    }
+
+    function logActivity(p=defaultPerson){
+      console.log(`${p.name.fisrt} loves ${p.favAcivity}`);
+    }
+
+    logActivity();
+  </script>
+</body>
+</html>
