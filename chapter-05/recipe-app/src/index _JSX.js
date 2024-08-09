@@ -40,7 +40,7 @@ const other = 'scissor';
 const result = getResult(me, other);
 
 
-//매우 중요 : JSX네서는 자바스크립트를 중괄호{} 안에 사용할수 있다.
+//매우 중요 : JSX에서는 자바스크립트를 중괄호{} 안에 사용할수 있다.
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
